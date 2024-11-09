@@ -31,6 +31,11 @@ Opiskelijan tiedot syötettiin setter metodeja käyttäen ja tiedot tulostettiin
 
 ## H2b
 
+Harjoituksessa pyydettiin luomaan luokka nimeltään Car.
+Luokalle tuli kolme jäsenmuuttujaa, brand, model ja yeaModel. Lisäksi luokalle lisätiin kaksi metodia.
+Pääohjelmassa tuli luoda vektori nimeltään carList ja luoda siihen kolme Car-luokan oliota. Tämän jälkeen oliot lisättiin listaan.
+Tehtävä tuli valmiiksi tulostamalla ensin toisen alkion tiedot ja tämän jälkeen kaikkien alkioiden tiedot käyttämällä for silmukkaa. 
+
 ## H3
 
 ## H4
