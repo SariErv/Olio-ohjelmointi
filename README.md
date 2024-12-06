@@ -99,8 +99,69 @@ Kutsu Car-olion setEngine metodia
 Kutsu Car-olion setWheels metodia
 
 
-
 ## H5
+
+Tehtävässä käsiteltiin referenssejä, assosiaatiota ja aggregaatiota. 
+Tässä harjoituksessa kerrataan mitä tarkoittavat termit muistiosoite ja osoitin l. pointteri. Lisäksi tutustutaan uuteen käsitteeseen referenssi.
+
+C++-ohjelmoinnissa referenssi on viittaus olemassa olevaan muuttujaan. Se toimii aliaksena, eli referenssi ja alkuperäinen muuttuja viittaavat samaan muistipaikkaan. Referenssi määritellään käyttämällä &-operaattoria. Referensseillä on seuraavat ominaisuudet:
+
+Ne on sidottava alustuksen yhteydessä, eikä niitä voi vaihtaa viittaamaan toiseen muuttujaan myöhemmin.
+Käyttämällä referenssiä voidaan välttää kopioimasta suuria tietorakenteita funktioiden parametreissa.
+Kaikki muutokset referenssin kautta vaikuttavat alkuperäiseen muuttujaan.
+Esimerkki:
+ 
+    int a = 10; 
+    int &ref = a; // ref on viittaus muuttujaan a 
+    ref = 20; // nyt myös a on 20 
+
+Referenssejä käytetään usein funktioiden parametreina ja palautusarvoina tehokkuuden parantamiseksi.
+Harjoitus5
+HUOM!: Luo kullekin luokalle erillinen h-tiedosto ja cpp-tiedosto.
+
+Vaihe1
+1. Luo uusi C++ sovellus
+2. Luo mainissa:
+    1. int muuttuja a ja anna arvoksi 5
+    2. int muuttuja b ja anna arvoksi 10
+3. Tulosta muuttujien a ja b arvot ja osoitteet
+
+
+4. Lisää osoitinmuuttuja myPointer ja sijoita siihen muuttujan a osoite ja
+    1. Tulosta osoittimen osoittaman muistipaikan osoite
+    2. Tulosta osoittimen osoittaman muistipaikan sisältö
+5. Suorita sovellus jolloin tuloksena pitäisi olla jotain tällaista:
+
+6. Sijoita osoittimeen myPointer muuttujan b osoite ja
+    1. Tulosta osoittimen osoittaman muistipaikan osoite
+    2. Tulosta osoittimen osoittaman muistipaikan sisältö
+7. Suorita sovellus jolloin tuloksena pitäisi olla jotain tällaista:
+
+8. Luo referenssi nimeltään refA ja laita se viittaamaan muuttujaan a ja
+    1. refA:n osoittama osoite
+    2. refA:n osoittaman muistipaikan sisältö
+9. Suorita sovellus jolloin tuloksena pitäisi olla jotain tällaista:
+  
+
+10. Kokeile voitko muuttaa refA:n osoittamaan b:n osoitteeseen?
+
+Vaihe2(Assosiation)
+
+1. Lisää sovellukseen luokka ClassB, ja siihen
+    1. private string muuttuja nimeltään info
+    2. get ja set metodit muuttujalle info
+2. Lisää sovellukseen luokka AssosiationA
+
+Edellisen vaiheen tarkoitus on havainnollistaa, että alkuperäisen B-olion data ei muutu, vaikka muokkaat A-olion dataa.
+
+Vaihe3(Aggregation)
+
+1. Lisää edelliseen tehtävään luokka AggregationA
+
+Edellisen vaiheen tarkoitus on havainnollistaa, että myös alkuperäisen B-olion data muuttuu, kun muokkaat A-olion dataa.
+
+Tehtävässä voidaan siis havaita, että kun oliolle A annetaan kopio oliosta B, niin A ei voi vaikuttaa olion B dataan.
+Jos oliolle A annetaan referenssinä olion B osoite, niin A:n muokkaus muuttaa B:n dataa.
 
 ## H6
 
