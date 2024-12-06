@@ -119,7 +119,7 @@ Referenssejä käytetään usein funktioiden parametreina ja palautusarvoina teh
 Harjoitus5
 HUOM!: Luo kullekin luokalle erillinen h-tiedosto ja cpp-tiedosto.
 
-Vaihe1
+# Vaihe1
 1. Luo uusi C++ sovellus
 2. Luo mainissa:
     1. int muuttuja a ja anna arvoksi 5
@@ -145,7 +145,7 @@ Vaihe1
 
 10. Kokeile voitko muuttaa refA:n osoittamaan b:n osoitteeseen?
 
-Vaihe2(Assosiation)
+# Vaihe2(Assosiation)
 
 1. Lisää sovellukseen luokka ClassB, ja siihen
     1. private string muuttuja nimeltään info
@@ -154,7 +154,7 @@ Vaihe2(Assosiation)
 
 Edellisen vaiheen tarkoitus on havainnollistaa, että alkuperäisen B-olion data ei muutu, vaikka muokkaat A-olion dataa.
 
-Vaihe3(Aggregation)
+# Vaihe3(Aggregation)
 
 1. Lisää edelliseen tehtävään luokka AggregationA
 
