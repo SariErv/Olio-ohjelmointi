@@ -163,6 +163,60 @@ Edellisen vaiheen tarkoitus on havainnollistaa, että myös alkuperäisen B-olio
 Tehtävässä voidaan siis havaita, että kun oliolle A annetaan kopio oliosta B, niin A ei voi vaikuttaa olion B dataan.
 Jos oliolle A annetaan referenssinä olion B osoite, niin A:n muokkaus muuttaa B:n dataa.
 
-## H6
+## H6a
+
+Qt-konsolisovellus
+
+Tehtävässa luodaan Qt-konsolisovellus ja se voitaisiin luoda valitsemalla tyypiksi Qt-console application. 
+Tee se kuitenkin ohjeiden mukaan "plain C++" tyyppisenä.
+
+1. Luo uusi sovellus, jonka tyyppi on Non-Qt/Plain C++
+2. Muokkaa .pro-tiedostoa:
+    1. Lisää rivi QT = core
+    2. Poista rivi CONFIG -= qt
+3. Lisää luokka MyClass
+4. Muokkaa myclass.h muotoon: "valmiiksi annettu"
+5. Muokkaa myclass.cpp muotoon: "valmiiksi annettu"
+6. Luo main.cpp olio luokasta MyClass ja kutsu sen metodia raiseMySignal
+
+
+## H6b
+
+Qt-konsolisovellus
+
+Rakenna tämän tehtävän sovellus luomalla sovellus, jonka tyyppinä on Qt-Console hyödyntäen Qt Creatorin ominaisuuksia.
+
+1. Luo uusi sovellus ja valitse nyt tyypiksi Application (Qt)->Qt Console Application
+2. Tutki sovelluksen pro-tiedostoa ja main.cpp-tiedostoa
+3. Lisää sovellukseen luokka ExampleClass (Qt Creatorin "Add New->C++ Class"). Kun luot luokan rastita
+    1. Include QObject
+    2. Add Q_OBJECT
+    Ja periytä ExampleClass luokasta QObject,
+4. Vertaa tiedoston exampleclass.h tiedostoa edellisen tehtävän h-tiedostoon
+5. Periytä ExampleClass luokasta QObject
+6. Lisää luokkaan: (h-tiedostoon)
+    1. public metodi void startToWait();
+    2. signals osioon signaali void readyToSay();
+    3. public slots osio ja siihen metodi void sayHelloSlot();
+    4. Lisää #include <QThread>
+    5. Lisää myös #include <QCoreApplication>, jos se puuttuu
+7. Kirjoita metodien toteutukset (cpp-tiedostoon)
+    1. startToWait() -metodiin seuraava koodi:
+                QThread::msleep(1000);
+                emit readyToSay();
+                
+    2. sayHelloSlot() -metodiin seuraava koodi:
+                qDebug()<<"Terve";
+                
+8. Kirjoita luokan muodostimeen rivit:
+        qDebug()<<"Start";
+        connect... 
+        qDebug()<<"End";
+        
+Muokkaa edellä tuota connect-riviä, niin että readyToSay-signaali yhdistetään slottiin sayHelloSlot. Tuon connect-funktion syntaksi on kuvattu sivulla https://peatutor.com/qt/signal_slot.php
+9. Luo main.cpp:ssä luokan ExampleClass-olio ja kutsu sen metodia startToWait
+10. Testaa sovellustasi
+
+Huom! qDebug toimii myös näin qDebug("Terve");, mutta yllä oleva tapa on uudempi.
 
 ## H7
